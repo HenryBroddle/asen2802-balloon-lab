@@ -3,17 +3,23 @@ classdef Balloon
     %   Detailed explanation goes here
     
     properties
-        volume
-        mass
+        volume % meters^3
+        mass % kilograms
     end
     
     methods
-        function obj = Balloon(volume, substrate_mass, fixture_mass, payload_mass, fluid_mass) % *(m^3, g, g, g, g)
-            % substrate = balloon material mass, fixture = added mass
-            % (string and clip), payload mass = mass of paperclips
-            obj.mass = fixture_mass + substrate_mass + payload_mass + fluid_mass;
+        function obj = Balloon(volume, substrate_mass, fixture_mass, fluid_mass, payload_mass)
+            arguments
+              volume double {mustBePositive} % meters^3 - Volume displaced by balloon
+              substrate_mass double {mustBePositive} % grams - Mass of balloon material
+              fixture_mass double {mustBePositive} % grams - Mass of string and fastening clip
+              fluid_mass double {mustBePositive} % grams - Mass of payload at neutral buoyancy
+              payload_mass double {mustBePositive} = 0 % grams - (Optional)Mass of payload. Default = 0
+           end 
+            obj.mass = fixture_mass/1000 + substrate_mass/1000 + payload_mass/1000 + fluid_mass/1000;
             obj.volume = volume;
         end
+
     end
 end
 
