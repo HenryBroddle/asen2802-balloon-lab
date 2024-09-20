@@ -14,12 +14,12 @@ classdef Fluid
             obj.molar_mass = molar_mass/1000;
             obj.ideal_constant = ideal_constant/1000;
         end
-        
-        function p = density(obj, volume, temperature, pressure) 
+      
+        function p = density(obj, volume, temperature, pressure) % ([], m^3, K, kPa)
            p = pressure * volume * (obj.molar_mass * obj.ideal_constant * temperature)/volume;
         end
 
-        function Fb = bouyancy(obj, volume, temperature, pressure)
+        function Fb = bouyancy(obj, volume, temperature, pressure) % ([], m^3, K, kPa)
             Fb = obj.density(volume, temperature, pressure) * volume;
         end
     end
