@@ -20,7 +20,7 @@ classdef Fluid
         end
 
         function Fb = bouyancy(obj, volume, temperature, pressure)
-            Fb = obj.density(volume, temperature, pressure) * volume * 9.81;
+            Fb = obj.density(volume, temperature, pressure) * volume;
         end
     end
 end
