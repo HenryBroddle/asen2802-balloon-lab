@@ -11,7 +11,7 @@ classdef Fluid
         function obj = Fluid(molar_mass, ideal_constant)
             arguments
                 molar_mass double {mustBePositive} % grams/mol
-                ideal_constant double {mustBePositive} % Joules/(kg·Kelvin)
+                ideal_constant double {mustBePositive} % kilo-Joules/(kg·Kelvin)
             end
             %FLUID Construct an instance of this class
             %   Given a Molar Mass and Ideal Gas Constant, returns a Fluid
