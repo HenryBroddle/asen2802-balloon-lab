@@ -9,12 +9,6 @@ Altitude = linspace(1,10500,10500);
 
 T_Balloon = ((1 ./ T_Env) - ((R .* m_Balloon) ./ ((P_Env ./ 1000) .* V_Balloon))) .^ -1;
 
-plot(Altitude, T_Balloon)
-xlabel('Altitude [m]')
-ylabel('Temperature of Balloon [K]')
-title('Temperature of  balloon vs altitude')
-hold on
-
 Max_Altitude = 0;
 counter = 0;
 for i = 1:10500
@@ -24,5 +18,11 @@ for i = 1:10500
     end
 end
 
+plot(Altitude, T_Balloon)
+xlabel('Altitude [m]')
+ylabel('Temperature of Balloon [K]')
+title('Temperature of  balloon vs altitude')
+hold on
 xline(Max_Altitude, '--b')
 yline(522, '--r')
+legend('Temperature of Balloon', 'Max Altitude', 'Max Temperature', 'location', 'best');
