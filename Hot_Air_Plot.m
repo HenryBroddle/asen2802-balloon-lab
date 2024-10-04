@@ -16,12 +16,15 @@ for i = 1:10500
         Max_Altitude = i;
         counter = counter + 1;
     end
+    if (T_Balloon(i) > 522)
+        T_Balloon(i) = NaN;
+    end
 end
 
-plot(Altitude, T_Balloon)
+plot(Altitude, T_Balloon, 'LineWidth', 2)
 xlabel('Altitude [m]')
 ylabel('Temperature of Balloon [K]')
-title('Temperature of  balloon vs altitude')
+title('Temperature of Balloon vs Altitude')
 hold on
 xline(Max_Altitude, '--b')
 yline(522, '--r')
