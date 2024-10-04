@@ -29,3 +29,4 @@ hold on
 xline(Max_Altitude, '--b')
 yline(522, '--r')
 legend('Temperature of Balloon', 'Max Altitude', 'Max Temperature', 'location', 'best');
+print("Hot Air Balloon", "-dpng", "-r300")
