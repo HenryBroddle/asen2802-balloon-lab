@@ -24,7 +24,7 @@ end
 plot(Altitude, T_Balloon, 'LineWidth', 2)
 xlabel('Altitude [m]')
 ylabel('Temperature of Balloon [K]')
-title('Temperature of Balloon vs Altitude')
+title('Temperature of Hot Air Balloon vs Altitude')
 hold on
 xline(Max_Altitude, '--b')
 yline(522, '--r')
